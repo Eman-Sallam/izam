@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { memo } from "react";
+import { cn } from '@/lib/utils';
+import { memo } from 'react';
 
 type PaginationItemProps = {
   label: string;
@@ -15,12 +15,13 @@ const PaginationItem = ({
   return (
     <div
       className={cn(
-        "px-2 py-1 rounded-md font-semibold border border-gray-400 text-gray-500",
+        'px-2 py-1 rounded-md font-semibold border border-gray-400 text-gray-500',
         {
           className,
-          "bg-green-600 border-green-600 text-white": isActive,
+          'bg-green-600 border-green-600 text-white': isActive,
         }
-      )}>
+      )}
+    >
       {label}
     </div>
   );

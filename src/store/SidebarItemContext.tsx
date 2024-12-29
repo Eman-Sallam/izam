@@ -1,8 +1,16 @@
-"use client";
+'use client';
 
-import { getNavItems, postSidebarItems } from "@/lib/actions";
-import { ISidebarItem } from "@/types";
-import { createContext, ReactNode, useCallback, useContext, useEffect, useState, useTransition } from "react";
+import { getNavItems, postSidebarItems } from '@/lib/actions';
+import { ISidebarItem } from '@/types';
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  useTransition,
+} from 'react';
 
 interface initValue {
   editingItemId: number | null;
@@ -41,10 +49,13 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
   // Id for selected element
   const [editingItemId, setEditingItemId] = useState<number | null>(null);
   // New title for selected element
-  const [newTitle, setNewTitle] = useState<string>("");
+  const [newTitle, setNewTitle] = useState<string>('');
 
   // to check selected item is child or parent
-  const findItemById = (items: ISidebarItem[], id: number): ISidebarItem | null => {
+  const findItemById = (
+    items: ISidebarItem[],
+    id: number
+  ): ISidebarItem | null => {
     for (const item of items) {
       if (item.id === id) {
         return item;
@@ -61,10 +72,9 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
 
   // Fined item by id and set editing item id and title
   const handleEdit = (id: number) => {
-
     if (id === editingItemId) {
       setEditingItemId(null);
-      setNewTitle("");
+      setNewTitle('');
     } else {
       const item = findItemById(navItems, id);
       if (item) {
@@ -75,13 +85,20 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // Update item by id
-  const updateItemById = (items: ISidebarItem[], id: number, newTitle: string): ISidebarItem[] => {
+  const updateItemById = (
+    items: ISidebarItem[],
+    id: number,
+    newTitle: string
+  ): ISidebarItem[] => {
     return items.map((item) => {
       if (item.id === id) {
         return { ...item, title: newTitle };
       }
       if (item.children && item.children.length > 0) {
-        return { ...item, children: updateItemById(item.children, id, newTitle) };
+        return {
+          ...item,
+          children: updateItemById(item.children, id, newTitle),
+        };
       }
       return item;
     });
@@ -92,19 +109,22 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
       const updatedItems = updateItemById(navItems, editingItemId, newTitle);
       setNavItems(updatedItems);
       setEditingItemId(null);
-      setNewTitle("");
+      setNewTitle('');
 
       try {
         await postSidebarItems(updatedItems);
-        console.log("Item successfully updated");
+        console.log('Item successfully updated');
       } catch (error) {
-        console.error("Failed to update item", error);
+        console.error('Failed to update item', error);
       }
     }
   };
 
   // Update visibility by id
-  const updateVisibilityById = (items: ISidebarItem[], id: number): ISidebarItem[] => {
+  const updateVisibilityById = (
+    items: ISidebarItem[],
+    id: number
+  ): ISidebarItem[] => {
     return items.map((item) => {
       if (item.id === id) {
         return { ...item, visible: !item.visible };
@@ -122,9 +142,9 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
 
     try {
       await postSidebarItems(updatedItems);
-      console.log("Visibility successfully updated");
+      console.log('Visibility successfully updated');
     } catch (error) {
-      console.error("Failed to update visibility", error);
+      console.error('Failed to update visibility', error);
     }
   };
 
@@ -138,14 +158,16 @@ const SidebarItemProvider = ({ children }: { children: ReactNode }) => {
     isPending,
   };
 
-  return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>;
+  return (
+    <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>
+  );
 };
 
 // Custom hook for consuming the context
 const useSidebarItemContext = () => {
   const context = useContext(SidebarContext);
   if (!context) {
-    throw new Error("useEdit must be used within an EditProvider");
+    throw new Error('useEdit must be used within an EditProvider');
   }
   return context;
 };

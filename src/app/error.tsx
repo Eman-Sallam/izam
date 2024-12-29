@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { ErrorPageProps } from "@/types";
-import Link from "next/link";
+import { Button } from '@/components/ui/button';
+import { ErrorPageProps } from '@/types';
+import Link from 'next/link';
 
 const error = ({ error, reset }: ErrorPageProps) => {
   return (
@@ -14,10 +14,16 @@ const error = ({ error, reset }: ErrorPageProps) => {
         Error Message: {error.message}
       </h2>
       <div className="flex items-center gap-5 mt-6">
-        <Button onClick={() => reset()} className="bg-blue-500 hover:bg-blue-700 text-md text-white font-bold py-2 px-3 rounded-md">
+        <Button
+          onClick={() => reset()}
+          className="bg-blue-500 hover:bg-blue-700 text-md text-white font-bold py-2 px-3 rounded-md"
+        >
           Try refresh page
         </Button>
-        <Link href="/" className="text-xl rounded-lg bg-green-600 hover:bg-green-700 py-2 px-3 text-white block">
+        <Link
+          href="/"
+          className="text-xl rounded-lg bg-green-600 hover:bg-green-700 py-2 px-3 text-white block"
+        >
           Go to home page
         </Link>
       </div>

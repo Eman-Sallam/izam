@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface NavbarIconProps {
   icon: React.ReactNode;
@@ -10,7 +10,7 @@ export interface ISidebarItemProps {
   item: ISidebarItem;
   openSidebar: boolean[];
   handleOpenSidebarSubList: (index: number) => void;
-  index: number
+  index: number;
 }
 export interface SidebarItemDragDropProps {
   item: ISidebarItem;
@@ -46,7 +46,7 @@ export interface ISidebarProps {
 export interface ISearchParamProps {
   params: { [key: string]: string }; // Get params
   searchParams: { [key: string]: string | string[] | undefined }; // Get query
-};
+}
 
 export interface ErrorPageProps {
   error: Error;

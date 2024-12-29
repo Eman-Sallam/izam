@@ -1,7 +1,15 @@
-"use client";
+'use client';
 
 import React from 'react';
-import { closestCorners, DndContext, useSensor, useSensors, MouseSensor, TouchSensor, KeyboardSensor } from '@dnd-kit/core';
+import {
+  closestCorners,
+  DndContext,
+  useSensor,
+  useSensors,
+  MouseSensor,
+  TouchSensor,
+  KeyboardSensor,
+} from '@dnd-kit/core';
 import { postTrackItem, postSidebarItems } from '@/lib/actions';
 import { ISidebarItem } from '@/types';
 import { SidebarItemProvider } from '@/store/SidebarItemContext';
@@ -9,10 +17,9 @@ import { SidebarItemProvider } from '@/store/SidebarItemContext';
 type ProvidersProps = {
   children: React.ReactNode;
   initItems: ISidebarItem[];
-}
+};
 
 const Providers = ({ children, initItems }: ProvidersProps) => {
-
   const handleDragEnd = async (event: any) => {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
@@ -21,11 +28,17 @@ const Providers = ({ children, initItems }: ProvidersProps) => {
     let oldIndex, newIndex, movedItem;
 
     // Check if the dragged item is a child
-    const parentItem = initItems.find(item => item.children?.some(child => child.id === active.id));
+    const parentItem = initItems.find((item) =>
+      item.children?.some((child) => child.id === active.id)
+    );
     if (parentItem) {
       // Handle child item drag
-      oldIndex = parentItem.children!.findIndex(child => child.id === active.id);
-      newIndex = parentItem.children!.findIndex(child => child.id === over.id);
+      oldIndex = parentItem.children!.findIndex(
+        (child) => child.id === active.id
+      );
+      newIndex = parentItem.children!.findIndex(
+        (child) => child.id === over.id
+      );
 
       if (oldIndex === -1 || newIndex === -1) return;
 
@@ -33,13 +46,15 @@ const Providers = ({ children, initItems }: ProvidersProps) => {
       [movedItem] = updatedChildren.splice(oldIndex, 1);
       updatedChildren.splice(newIndex, 0, movedItem);
 
-      updatedItems = initItems.map(item =>
-        item.id === parentItem.id ? { ...item, children: updatedChildren } : item
+      updatedItems = initItems.map((item) =>
+        item.id === parentItem.id
+          ? { ...item, children: updatedChildren }
+          : item
       );
     } else {
       // Handle top-level item drag
-      oldIndex = initItems.findIndex(item => item.id === active.id);
-      newIndex = initItems.findIndex(item => item.id === over.id);
+      oldIndex = initItems.findIndex((item) => item.id === active.id);
+      newIndex = initItems.findIndex((item) => item.id === over.id);
 
       if (oldIndex === -1 || newIndex === -1) return;
 
@@ -59,11 +74,17 @@ const Providers = ({ children, initItems }: ProvidersProps) => {
   const sensors = useSensors(
     useSensor(MouseSensor),
     useSensor(TouchSensor),
-    useSensor(KeyboardSensor),
+    useSensor(KeyboardSensor)
   );
   return (
     <SidebarItemProvider>
-      <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>{children}</DndContext>
+      <DndContext
+        sensors={sensors}
+        onDragEnd={handleDragEnd}
+        collisionDetection={closestCorners}
+      >
+        {children}
+      </DndContext>
     </SidebarItemProvider>
   );
 };
