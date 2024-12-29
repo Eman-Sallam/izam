@@ -59,7 +59,7 @@ const SidebarListDragDrop = ({
                       {item.children.map((subL: ISidebarItem) => (
                         <div
                           key={subL.id}
-                          className="p-3 bg-gray-100 font-semibold self-end w-4/5"
+                          className="p-4  rounded text-lg font-medium text-gray-700 self-end w-11/12"
                         >
                           <ItemProvider
                             handleVisibility={handleVisibility}

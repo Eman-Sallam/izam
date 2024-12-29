@@ -26,7 +26,7 @@ const ItemProvider = ({
 
   return (
     <div
-      className="p-3 bg-gray-100 font-semibold flex gap-2 items-center justify-between cursor-default"
+      className="p-4 bg-gray-100 rounded text-xl font-medium flex gap-2 items-center justify-between cursor-default"
       ref={setNodeRef}
       {...attributes}
       style={style}

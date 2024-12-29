@@ -42,7 +42,7 @@ const SidebarList = ({
                       <Link
                         key={subL.id}
                         href={subL.target || '#'}
-                        className="p-3 bg-gray-100 font-semibold self-end w-4/5"
+                        className="p-4  text-gray-700 rounded text-lg font-medium self-end w-11/12"
                         passHref
                       >
                         {subL.title}

@@ -10,6 +10,7 @@ import {
 import { ArrowLeft, Settings, Text } from 'lucide-react';
 import SidebarList from './SidebarList';
 import SidebarListDragDrop from './SidebarListDragDrop';
+import { SlSettings } from 'react-icons/sl';
 
 const Sidebar = ({ navItems }: ISidebarProps) => {
   const [openSidebar, setOpenSidebar] = useState<boolean[]>(
@@ -36,13 +37,14 @@ const Sidebar = ({ navItems }: ISidebarProps) => {
   };
 
   return (
-    <section className="flex flex-col lg:pt-5">
+    <section className="flex flex-col bg-white">
       <div className="flex flex-col">
-        <div className="hidden md:flex md:self-end">
-          <Settings onClick={handleOpenEditMode} />
+        <div className="hidden md:flex md:justify-between py-8 border-b border-gray-200 mb-4 px-5">
+          <h3 className="text-xl font-medium">Menu</h3>
+          <SlSettings onClick={handleOpenEditMode} size={'26px'} />
         </div>
         <div
-          className="md:hidden p-3 bg-gray-500 w-full flex justify-end items-center"
+          className="md:hidden p-3 bg-gray-500 w-full flex justify-end items-center px-5"
           onClick={handleSmallScreenSidebar}
         >
           <span className="text-md font-semibold w-3/5">Companies</span>
@@ -52,7 +54,7 @@ const Sidebar = ({ navItems }: ISidebarProps) => {
         </div>
         <div
           className={cn(
-            'bg-white z-[100] md:z-10 md:min-h-[70vh] md:mt-2 md:static flex flex-col gap-1 w-full p-2 fixed top-0 right-0 transform transition-transform duration-500 ease-in-out',
+            ' z-[100] md:z-10 md:min-h-[70vh] md:mt-2 md:static flex flex-col gap-2 w-full   fixed top-0 right-0 transform transition-transform duration-500 px-5 ease-in-out',
             {
               'translate-x-0 h-full': smallScreenSidebar === true,
               'translate-x-full md:translate-x-0 h-full':

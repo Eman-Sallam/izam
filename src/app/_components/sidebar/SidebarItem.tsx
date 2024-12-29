@@ -11,7 +11,7 @@ const SidebarItem = ({
 }: ISidebarItemProps) => {
   return item?.children ? (
     <div
-      className="p-3 bg-gray-100 font-semibold flex justify-between"
+      className="p-4 bg-gray-100 text-xl font-medium flex justify-between rounded items-center"
       onClick={() => handleOpenSidebarSubList(index)}
     >
       {item.target ? (
@@ -19,19 +19,19 @@ const SidebarItem = ({
           {item.title}
         </Link>
       ) : (
-        <span className="cursor-pointer">{item.title}</span>
+        <span className="cursor-pointer text-gray-700">{item.title}</span>
       )}
       <span
         className={
           openSidebar[index] ? '-rotate-180 transition-all duration-500' : ''
         }
       >
-        <ChevronUp />
+        <ChevronUp size={'20px'} />
       </span>
     </div>
   ) : (
     <div
-      className="p-3 bg-gray-100 font-semibold flex justify-between"
+      className="p-4 bg-gray-100 rounded text-xl font-medium flex justify-between"
       onClick={() => handleOpenSidebarSubList(index)}
     >
       <Link
@@ -40,7 +40,7 @@ const SidebarItem = ({
         className="text-gray-700 w-full"
         passHref
       >
-        {item.title}{' '}
+        {item.title}
       </Link>
     </div>
   );

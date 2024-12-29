@@ -26,7 +26,7 @@ const SidebarItemDragDrop = ({
       handleOpenEdit={handleEdit}
       item={item}
     >
-      <div key={item.title} className="text-gray-700 w-full">
+      <div key={item.title} className="text-gray-600 w-full">
         {editingItemId === item.id ? (
           <UpdatedItem
             handleSaveEdit={handleSaveEdit}
