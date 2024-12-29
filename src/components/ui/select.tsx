@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-
+import { TiArrowSortedDown } from 'react-icons/ti';
 import { cn } from '@/lib/utils';
 
 const Select = SelectPrimitive.Root;
@@ -26,7 +26,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <TiArrowSortedDown className="h-6 w-6 opacity-70" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));

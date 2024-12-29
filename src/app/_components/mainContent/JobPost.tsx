@@ -32,7 +32,7 @@ const JobPost = ({
 }: JobPostProps) => {
   return (
     <div
-      className={cn('border rounded-md flex flex-col', {
+      className={cn('border bg-white rounded-md flex flex-col hover:bg-green-200 hover:border-green-400', {
         'border-green-400 bg-green-200': isActive, // if selected
       })}
     >

@@ -1,47 +1,59 @@
-import {
-  Bell,
-  BriefcaseBusiness,
-  Home,
-  ListCollapse,
-  MessageSquare,
-  Users,
-} from 'lucide-react';
-import NavbarIcon from './navbar/NavbarIcon';
-import SearchSection from './navbar/SearchSection';
+import { ListCollapse } from 'lucide-react';
+import NavbarIcon from './NavbarIcon';
+import SearchSection from './SearchSection';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Fragment } from 'react';
 import Link from 'next/link';
+import { GrHomeRounded } from 'react-icons/gr';
+import { RiBriefcase4Fill } from 'react-icons/ri';
+import { PiUsersThreeBold } from 'react-icons/pi';
+import { FiBell, FiMessageSquare } from 'react-icons/fi';
 
 const Navbar = () => {
   return (
-    <Fragment>
-      <nav className="hidden md:block h-navbar-height z-[100] px-4 py-3 bg-black text-white sticky inset-0">
-        <div className="h-12 flex items-center justify-between gap-5">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-3xl font-bold">
-              I<span className="text-green-800">Z</span>AM
+    <>
+      <nav className="hidden md:block h-navbar-height z-[100] px-12 py-3 bg-black text-white sticky inset-0">
+        <div className="h-full flex items-center justify-between gap-5">
+          <div className="flex items-center gap-9">
+            <Link href="/" className="text-4xl font-bold">
+              i<span className="text-green-800">Z</span>AM
             </Link>
             <SearchSection />
           </div>
-          <div className="flex gap-6 h-full">
-            <NavbarIcon icon={<Home />} title="Home" href="/" />
+          <div className="flex gap-9 h-full items-center">
             <NavbarIcon
-              icon={<BriefcaseBusiness fill="white" />}
+              icon={<GrHomeRounded size={30} />}
+              title="Home"
+              href="/"
+            />
+            <NavbarIcon
+              icon={<RiBriefcase4Fill size={30} />}
               title="Jobs"
               href="/"
             />
-            <NavbarIcon icon={<Users />} title="Employers" href="/" />
-            <span className="h-[41px] w-[2px] bg-slate-700 rounded-full" />
-            <NavbarIcon icon={<Bell />} title="Notification" href="/" />
+            <NavbarIcon
+              icon={<PiUsersThreeBold size={30} />}
+              title="Employers"
+              href="/"
+            />
+            <span className="h-[41px] w-[1px] bg-gray-300  rounded-full opacity-60" />
+            <NavbarIcon
+              icon={<FiBell size={30} />}
+              title="Notifications"
+              href="/"
+            />
             <div className="relative h-full">
-              <span className="absolute bg-red-600 w-4 h-4 rounded-full right-1 -top-1 text-sm flex flex-col items-center justify-center">
+              <span className="absolute bg-red-600 w-4 h-4 rounded-full right-6 top-0 text-xs flex flex-col items-center justify-center">
                 1
               </span>
-              <NavbarIcon icon={<MessageSquare />} title="Message" href="/" />
+              <NavbarIcon
+                icon={<FiMessageSquare size={30} />}
+                title="Messaging"
+                href="/"
+              />
             </div>
             <NavbarIcon
               icon={
-                <Avatar className="w-6 h-6">
+                <Avatar className="w-9 h-9">
                   <AvatarImage src="https://github.com/shadcn.png" />
                   <AvatarFallback className="text-black">AR</AvatarFallback>
                 </Avatar>
@@ -81,7 +93,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </Fragment>
+    </>
   );
 };
 

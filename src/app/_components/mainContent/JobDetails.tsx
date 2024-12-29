@@ -32,7 +32,7 @@ const JobDetails = () => {
         </Select>
         <span className="text-sm">Sorting by: </span>
       </div>
-      <div className="bg-green-700 rounded-md flex justify-between items-center p-5 text-white">
+      <div className="bg-primary rounded-md flex justify-between items-center p-5 text-white">
         <div className="flex flex-col gap-3">
           <h3 className="font-semibold">UI Designer in Egypt</h3>
           <p>70 job positions</p>

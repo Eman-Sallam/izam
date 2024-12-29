@@ -20,18 +20,17 @@ const SearchSection = ({ className }: SearchSectionProps) => {
   return (
     <div
       className={cn(
-        'flex items-center bg-white p-2 rounded-full h-12 w-auto lg:w-80',
+        'flex items-center bg-white p-2 rounded-full h-14 w-auto lg:w-96',
         className
       )}
     >
-      <Search
-        className="p-3 bg-green-700 rounded-full"
-        size={'40px'}
-        onClick={handleSearchClick}
-      />
+      <span className="p-3 bg-primary rounded-full">
+        <Search size={'24px'} onClick={handleSearchClick} strokeWidth={3} />
+      </span>
+
       <Input
         type="text"
-        className="hidden md:block border-0 text-black w-full focus-visible:ring-0 focus-visible:ring-offset-0"
+        className="hidden placeholder:text-gray-400 md:block border-0 text-lg text-gray-900 w-full focus-visible:ring-0 focus-visible:ring-offset-0"
         placeholder="Search by name, job title, ..."
         ref={inputRef}
       />
