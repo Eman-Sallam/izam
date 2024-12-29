@@ -1,10 +1,10 @@
-import { ArrowDownToDot, Calendar, CircleCheck, Ellipsis, FileText, Heart, Redo } from 'lucide-react'
-import Image from 'next/image'
-import React from 'react'
-import JobLocation from '../mainContent/JobLocation'
-import JobData from '../mainContent/JobData'
-import { Button } from '../../../components/ui/button'
-import JobInfo from './JobInfo'
+import { ArrowDownToDot, Calendar, CircleCheck, Ellipsis, FileText, Heart, Redo } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react';
+import JobLocation from '../mainContent/JobLocation';
+import JobData from '../mainContent/JobData';
+import { Button } from '../../../components/ui/button';
+import JobInfo from './JobInfo';
 
 type JobSidebarProps = {}
 
@@ -67,7 +67,7 @@ const JobSidebar = ({ }: JobSidebarProps) => {
         </div>
       </div>
     </aside>
-  )
-}
+  );
+};
 
-export default JobSidebar
+export default JobSidebar;

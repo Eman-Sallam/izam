@@ -1,9 +1,9 @@
 "use client";
 
-import { ISidebarItem } from '@/types'
-import Link from 'next/link'
-import { Fragment } from 'react'
-import SidebarItem from './SidebarItem'
+import { ISidebarItem } from '@/types';
+import Link from 'next/link';
+import { Fragment } from 'react';
+import SidebarItem from './SidebarItem';
 
 type SidebarListProps = {
   handleOpenSidebarSubList: (index: number) => void;
@@ -43,7 +43,7 @@ const SidebarList = ({ handleOpenSidebarSubList, navItems, openSidebar }: Sideba
         </Fragment> : null
       ))}
     </>
-  )
-}
+  );
+};
 
-export default SidebarList
+export default SidebarList;

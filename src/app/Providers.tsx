@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React from 'react';
 import { closestCorners, DndContext, useSensor, useSensors, MouseSensor, TouchSensor, KeyboardSensor } from '@dnd-kit/core';
 import { postTrackItem, postSidebarItems } from '@/lib/actions';
 import { ISidebarItem } from '@/types';
@@ -65,7 +65,7 @@ const Providers = ({ children, initItems }: ProvidersProps) => {
     <SidebarItemProvider>
       <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>{children}</DndContext>
     </SidebarItemProvider>
-  )
-}
+  );
+};
 
-export default Providers
+export default Providers;

@@ -16,7 +16,7 @@ const ItemProvider = ({ children, item, handleOpenEdit, handleVisibility }: Item
   const style = {
     transition,
     transform: CSS.Transform.toString(transform),
-  }
+  };
 
   return (
     <div
@@ -33,7 +33,7 @@ const ItemProvider = ({ children, item, handleOpenEdit, handleVisibility }: Item
         <span className="text-gray-400" onClick={() => handleVisibility(item.id)}>{item.visible === undefined || item.visible === true ? <Eye /> : <EyeOff />}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ItemProvider
+export default ItemProvider;

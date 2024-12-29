@@ -4,7 +4,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
 import { NavbarIconProps } from '@/types';
 import { memo } from 'react';
 
@@ -31,7 +31,7 @@ const NavbarIcon = ({
         </SelectContent>
       </Select>
     </div>
-  )
-}
+  );
+};
 
-export default memo(NavbarIcon)
+export default memo(NavbarIcon);

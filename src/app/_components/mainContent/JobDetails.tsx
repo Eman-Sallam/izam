@@ -4,12 +4,12 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Switch } from '../../../components/ui/switch'
-import JobPost from "./JobPost"
-import PaginationItem from "./PaginationItem"
-import { IJobPost } from "@/types"
-import { jobPost } from "@/constants"
+} from "@/components/ui/select";
+import { Switch } from '../../../components/ui/switch';
+import JobPost from "./JobPost";
+import PaginationItem from "./PaginationItem";
+import { IJobPost } from "@/types";
+import { jobPost } from "@/constants";
 
 const JobDetails = () => {
   // const [isSliderVisible, setSliderVisible] = useState(true);
@@ -65,7 +65,7 @@ const JobDetails = () => {
         <PaginationItem label="&gt;" />
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default JobDetails
+export default JobDetails;

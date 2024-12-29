@@ -9,7 +9,7 @@ type JobDataProps = {
 const JobData = ({ text, className }: JobDataProps) => {
   return (
     <div className={cn('bg-white text-gray-400 rounded-md py-1 px-2 text-sm font-semibold w-fit', className)}>{text}</div>
-  )
-}
+  );
+};
 
-export default memo(JobData)
+export default memo(JobData);

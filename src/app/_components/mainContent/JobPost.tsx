@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { memo } from 'react'
+import { memo } from 'react';
 import JobLocation from './JobLocation';
-import { ArrowDownToDot, Calendar, Heart } from 'lucide-react'
-import JobData from './JobData'
+import { ArrowDownToDot, Calendar, Heart } from 'lucide-react';
+import JobData from './JobData';
 
 type JobPostProps = {
   isActive?: boolean;
@@ -68,7 +68,7 @@ const JobPost = ({
         <div className='p-5 text-sm font-semibold text-gray-400'>{relativeTracks}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default memo(JobPost)
+export default memo(JobPost);

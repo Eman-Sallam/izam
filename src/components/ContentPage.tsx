@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +9,7 @@ const ContentPage = ({ children }: Props) => {
     <div className='h-[calc(100vh-72px)] w-full flex flex-col items-center justify-center'>
       <p className='text-3xl'>{children}</p>
     </div>
-  )
-}
+  );
+};
 
-export default ContentPage
+export default ContentPage;

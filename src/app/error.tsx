@@ -22,7 +22,7 @@ const error = ({ error, reset }: ErrorPageProps) => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default error
+export default error;

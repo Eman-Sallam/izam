@@ -27,10 +27,10 @@ const Sidebar = ({ navItems }: ISidebarProps) => {
   };
 
   /* Drag and drop */
-  const [openEditMode, setOpenEditMode] = useState(false)
+  const [openEditMode, setOpenEditMode] = useState(false);
   const handleOpenEditMode = () => {
-    setOpenEditMode(prev => !prev)
-  }
+    setOpenEditMode(prev => !prev);
+  };
 
   return (
     <section className='flex flex-col lg:pt-5'>
@@ -82,7 +82,7 @@ const Sidebar = ({ navItems }: ISidebarProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

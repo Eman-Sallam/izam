@@ -1,8 +1,8 @@
 
-import { Bell, BriefcaseBusiness, Home, ListCollapse, MessageSquare, Users } from 'lucide-react'
+import { Bell, BriefcaseBusiness, Home, ListCollapse, MessageSquare, Users } from 'lucide-react';
 import NavbarIcon from './navbar/NavbarIcon';
 import SearchSection from './navbar/SearchSection';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Fragment } from 'react';
 import Link from 'next/link';
 
@@ -58,7 +58,7 @@ const Navbar = () => {
         </div>
       </nav>
     </Fragment>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
