@@ -1,7 +1,9 @@
-import ContentPage from '@/components/ContentPage';
+import ContentPage from '@/components/ContentPage'
 
 const AboutPage = () => {
-  return <ContentPage>About</ContentPage>;
-};
+  return (
+    <ContentPage>About</ContentPage>
+  )
+}
 
-export default AboutPage;
+export default AboutPage

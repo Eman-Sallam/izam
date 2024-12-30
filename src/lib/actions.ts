@@ -1,12 +1,12 @@
-'use server';
+"use server";
 
-import { ISidebarItem } from '@/types';
-import { revalidatePath } from 'next/cache';
+import { ISidebarItem } from "@/types";
+import { revalidatePath } from "next/cache";
 
 export async function getNavItems() {
   try {
     // const response = await fetch("https://ahmed-radi-daftra.koyeb.app/nav");
-    const response = await fetch('http://localhost:8081/nav');
+    const response = await fetch("http://localhost:8081/nav");
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -21,22 +21,14 @@ export async function getNavItems() {
     revalidatePath('/');
     return data;
   } catch (error) {
-    console.error('Failed to fetch navigation items:', error);
+    console.error("Failed to fetch navigation items:", error);
     throw error;
   }
 }
 
-export async function postTrackItem({
-  id,
-  from,
-  to,
-}: {
-  id: number;
-  from: number;
-  to: number;
-}) {
+export async function postTrackItem({ id, from, to }: { id: number, from: number, to: number }) {
   // const response = await fetch("https://ahmed-radi-daftra.koyeb.app/track", {
-  const response = await fetch('http://localhost:8081/track', {
+  const response = await fetch("http://localhost:8081/track", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
