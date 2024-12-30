@@ -19,9 +19,9 @@ const JobDetails = () => {
 
   return (
     <section className="flex flex-col gap-2.5 lg:pt-5">
-      <div className="flex flex-row-reverse items-center gap-2">
+      <div className="  flex flex-row-reverse items-center gap-2 w-2/6 p-3 self-end">
         <Select>
-          <SelectTrigger className="w-[100px] text-green-600 border-none bg-transparent p-0 h-fit gap-2">
+          <SelectTrigger className="w-[100px] text-xl text-green-600 border-none bg-transparent p-0 h-fit gap-2">
             <SelectValue placeholder="Type" />
           </SelectTrigger>
           <SelectContent>
@@ -30,7 +30,7 @@ const JobDetails = () => {
             <SelectItem value="system">System</SelectItem>
           </SelectContent>
         </Select>
-        <span className="text-sm">Sorting by: </span>
+        <span className="text-xl">Sorting by: </span>
       </div>
       <div className="bg-primary rounded-md flex justify-between items-center p-5 text-white">
         <div className="flex flex-col gap-3">

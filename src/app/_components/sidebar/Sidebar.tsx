@@ -11,6 +11,10 @@ import { ArrowLeft, Settings, Text } from 'lucide-react';
 import SidebarList from './SidebarList';
 import SidebarListDragDrop from './SidebarListDragDrop';
 import { SlSettings } from 'react-icons/sl';
+import {
+  IoIosCheckmarkCircleOutline,
+  IoIosCloseCircleOutline,
+} from 'react-icons/io';
 
 const Sidebar = ({ navItems }: ISidebarProps) => {
   const [openSidebar, setOpenSidebar] = useState<boolean[]>(
@@ -41,7 +45,25 @@ const Sidebar = ({ navItems }: ISidebarProps) => {
       <div className="flex flex-col">
         <div className="hidden md:flex md:justify-between py-8 border-b border-gray-200 mb-4 px-5">
           <h3 className="text-xl font-medium">Menu</h3>
-          <SlSettings onClick={handleOpenEditMode} size={'26px'} />
+
+          {openEditMode ? (
+            <>
+              <span className="flex flex-row">
+                <IoIosCloseCircleOutline
+                  size={40}
+                  onClick={handleOpenEditMode}
+                  className="text-red-600"
+                />
+                <IoIosCheckmarkCircleOutline
+                  size={40}
+                  onClick={handleOpenEditMode}
+                  className="text-primary"
+                />
+              </span>
+            </>
+          ) : (
+            <SlSettings onClick={handleOpenEditMode} size={'26px'} />
+          )}
         </div>
         <div
           className="md:hidden p-3 bg-gray-500 w-full flex justify-end items-center px-5"

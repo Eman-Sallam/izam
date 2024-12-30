@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <main
       className={
-        'lg:p-0 p-5 grid grid-cols-[1fr] lg:grid-cols-[1fr_2fr_1.5fr] md:grid-cols-[1fr_2fr] gap-6 md:gap-y-2.5'
+        'lg:p-0 p-5 grid grid-cols-[1fr] lg:grid-cols-[1.1fr_2fr_1.5fr] md:grid-cols-[1fr_2fr] gap-6 md:gap-y-2.5'
       }
     >
       <Providers initItems={navItems}>
